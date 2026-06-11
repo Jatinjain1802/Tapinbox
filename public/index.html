@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapinbox | Creator Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="gradient-text">Tapinbox</span>
+            </div>
+            <nav>
+                <button class="nav-item active" id="nav-dashboard">Dashboard</button>
+                <button class="nav-item" id="nav-comments">Comments</button>
+                <button class="nav-item" id="nav-insights">Insights</button>
+                <button class="nav-item" id="nav-settings">Settings</button>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Hello, <span id="creator-name">Creator</span> 👋</h1>
+                <div class="status-indicator">
+                    <span class="dot live"></span> Live Webhook
+                </div>
+            </header>
+
+            <!-- DASHBOARD VIEW -->
+            <section id="dashboard-view" class="view">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>New Comments</h3>
+                        <p id="stat-comments">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Leads Detected</h3>
+                        <p id="stat-leads">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Reach</h3>
+                        <p id="stat-reach">0</p>
+                    </div>
+                </div>
+
+                <div class="feed-container">
+                    <h2>Recent Interactions</h2>
+                    <div id="interaction-feed" class="feed">
+                        <!-- Comments will be injected here via script.js -->
+                        <div class="loading-spinner">Waiting for live events...</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL FOR REPLIES -->
+    <div id="reply-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <h3>Reply to @<span id="target-user"></span></h3>
+            <textarea id="reply-text" placeholder="Type your response..."></textarea>
+            <div class="modal-actions">
+                <button id="close-modal" class="btn secondary">Cancel</button>
+                <button id="send-reply" class="btn primary">Send Reply</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
